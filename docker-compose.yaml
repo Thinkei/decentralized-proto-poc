@@ -1,0 +1,42 @@
+version: "3.8"
+
+services:
+  foo:
+    build:
+      dockerfile: packages/foo-service/Dockerfile
+      args:
+        - "BUILD_CONTEXT=foo-service"
+        - "PACKAGE=@poc/foo-service"
+    env_file: packages/foo-service/.env
+    ports:
+      - 8000:8000
+    networks:
+      - internal
+
+  bar:
+    build:
+      dockerfile: packages/bar-service/Dockerfile
+      args:
+        - "BUILD_CONTEXT=bar-service"
+        - "PACKAGE=@poc/bar-service"
+    env_file: packages/bar-service/.env
+    ports:
+      - 8001:8001
+    networks:
+      - internal
+
+  rest-bff:
+    build:
+      dockerfile: packages/rest-bff-service/Dockerfile
+      args:
+        - "BUILD_CONTEXT=rest-bff-service"
+        - "PACKAGE=@poc/rest-bff-service"
+    env_file: packages/rest-bff-service/.env
+    ports:
+      - 3000:3000
+    networks:
+      - internal
+
+networks:
+  internal:
+    driver: bridge

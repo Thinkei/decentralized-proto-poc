@@ -19,7 +19,10 @@
     },
     {
       "path": "./packages/rest-bff-service"
+    },
+    {
+      "path": "./packages/bar-service"
     }
   ],
-  "exclude": ["packages/**/dist/**"]
+  "exclude": ["packages/**/build/**"]
 }

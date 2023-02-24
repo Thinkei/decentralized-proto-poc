@@ -13,16 +13,9 @@ function main() {
 
   const port = process.env.PORT ?? 8001
 
-  http2
-    .createSecureServer(
-      {
-        allowHTTP1: true,
-      },
-      handler,
-    )
-    .listen(process.env.PORT ?? 8001, () => {
-      stdout.write(`The server is listening on https://localhost:${port}\n`)
-    })
+  http2.createServer({}, handler).listen(process.env.PORT ?? 8001, () => {
+    stdout.write(`The server is listening on https://localhost:${port}\n`)
+  })
 }
 
 main()

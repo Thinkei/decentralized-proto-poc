@@ -5,7 +5,7 @@ import {
   GetFooResponse,
   ListFooResponse,
   UpdateFooResponse,
-} from "@poc/foo-service/src/gen/protobuf/foo/foo"
+} from "@poc/foo-service/build/gen"
 import { ChannelCredentials } from "@grpc/grpc-js"
 
 export class FooService {
