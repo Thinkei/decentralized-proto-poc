@@ -1,0 +1,59 @@
+syntax = "proto3";
+
+package ebf.foo.v1;
+
+message Foo {
+  string id = 1;
+  string data = 2;
+}
+
+message CreateFooRequest {
+  string data = 1; // Required
+}
+
+message CreateFooResponse {
+  Foo details = 1;
+}
+
+message GetFooRequest {
+  string id = 1; // Required
+}
+
+message GetFooResponse {
+  Foo details = 1;
+}
+
+message ListFooRequest {
+  int32 page = 1;
+  int32 per_page = 2;
+}
+
+message ListFooResponse {
+  repeated Foo foos = 1;
+  int32 total = 2;
+}
+
+message DeleteFooRequest {
+  string id = 1;
+}
+
+message DeleteFooResponse {
+  Foo details = 1;
+}
+
+message UpdateFooRequest {
+  string id = 1;
+  string data = 2;
+}
+
+message UpdateFooResponse {
+  Foo details = 1;
+}
+
+service FooService {
+  rpc CreateFoo(CreateFooRequest) returns (CreateFooResponse) {}
+  rpc GetFoo(GetFooRequest) returns (GetFooResponse) {}
+  rpc ListFoo(ListFooRequest) returns (ListFooResponse) {}
+  rpc DeleteFoo(DeleteFooRequest) returns (DeleteFooResponse) {}
+  rpc UpdateFoo(UpdateFooRequest) returns (UpdateFooResponse) {}
+}
