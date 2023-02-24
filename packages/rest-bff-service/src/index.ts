@@ -1,12 +1,17 @@
 import express from "express"
 import { registerRoute } from "./route"
+import dotenv from "dotenv"
+
+dotenv.config()
 
 function main() {
   const app = express()
   app.use(express.json())
   registerRoute(app)
-  app.listen(3000)
-  console.log("App listen on port 3000")
+
+  const port = process.env.PORT ?? 3000
+  app.listen(port)
+  console.log(`App listen on port ${port}`)
 }
 
 main()

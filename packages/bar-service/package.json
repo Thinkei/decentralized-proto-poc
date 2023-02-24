@@ -1,9 +1,12 @@
 {
-  "name": "@poc/foo-service",
-  "version": "1.0.1",
+  "name": "@poc/bar-service",
+  "version": "1.0.0",
   "dependencies": {
-    "@grpc/grpc-js": "^1.8.10",
-    "@grpc/proto-loader": "^0.7.5",
+    "@bufbuild/buf": "^1.14.0-1",
+    "@bufbuild/connect": "^0.8.0",
+    "@bufbuild/connect-node": "^0.8.0",
+    "@bufbuild/protoc-gen-connect-es": "^0.8.0",
+    "@bufbuild/protoc-gen-es": "^1.0.0",
     "dotenv": "^16.0.3"
   },
   "scripts": {

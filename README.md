@@ -2,13 +2,16 @@
 
 This is a sample microservice to demonstrate how protobuf file organization works in the decentralized way (each service contains it's own protobuf)
 
-# About Services
+# About example services
 
-## Foo Service
+1.Foo Service
 
-NodeJS-base service, exposing `grpc` to be comsumed by other service
+NodeJS-base service, (using `grpc-js` library), exposing `grpc` to be comsumed by other service
 
-## Rest BFF Service
+2.Bar Service
+NodeJS-base service, (using `connect` library), exposing `grpc` to be consumed by other service
+
+3.Rest BFF Service
 
 NodeJS-base BFF, consuming `grpc` from other services and exposing `REST` for client use
 
