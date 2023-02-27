@@ -3,6 +3,9 @@
   "private": true,
   "version": "1.0.0",
   "dependencies": {
+    "@bufbuild/connect": "^0.8.1",
+    "@bufbuild/connect-node": "^0.8.1",
+    "@poc/bar-service": "1.0.0",
     "@poc/foo-service": "1.0.1",
     "body-parser": "^1.20.2",
     "cors": "^2.8.5",

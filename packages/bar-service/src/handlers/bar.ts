@@ -1,18 +1,12 @@
 import { BarService } from "../gen/protobuf/bar/bar_connect"
-import {
-  UnaryRequest,
-  ServerStreamRequest,
-  ClientStreamRequest,
-  BiStreamingRequest,
-  UnaryResponse,
-} from "../gen/protobuf/bar/bar_pb"
+import { UnaryRequest, ServerStreamRequest, ClientStreamRequest, BiStreamingRequest } from "../gen/protobuf/bar/bar_pb"
 import { ServiceImpl } from "@bufbuild/connect"
 
 function delay(ms: number) {
   return new Promise((resolve) => setTimeout(resolve, ms))
 }
 
-export const BarHandlers = {
+export const BarHandlers: ServiceImpl<typeof BarService> = {
   unary: (req: UnaryRequest) => {
     return {
       data: `You said ${(req as UnaryRequest).data}`,
@@ -46,4 +40,4 @@ export const BarHandlers = {
       }
     }
   },
-} as unknown as ServiceImpl<typeof BarService>
+}

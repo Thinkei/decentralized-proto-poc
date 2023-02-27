@@ -11,7 +11,11 @@ import { ChannelCredentials } from "@grpc/grpc-js"
 export class FooService {
   client: FooServiceClient
   constructor() {
-    this.client = new FooServiceClient("localhost:10000", ChannelCredentials.createInsecure(), {})
+    this.client = new FooServiceClient(
+      process.env.BAR_SERVICE_URL ?? "localhost:8000",
+      ChannelCredentials.createInsecure(),
+      {},
+    )
   }
 
   async getFoo(id: string) {
